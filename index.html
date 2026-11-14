@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Keepsake — personal flashcards</title>
+  <link rel="canonical" href="https://lawrencekurniawan.github.io/">
+  <meta name="description" content="Keepsake is a personal iOS flashcard app for words, phrases, and grammar patterns, with local storage and optional AI assistance using your own OpenAI key.">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #faf7f2;
+      --ink: #211d18;
+      --muted: #5f574d;
+      --accent: #8a5a2b;
+      --card: #ffffff;
+      --line: #e5ddd2;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #171410;
+        --ink: #f1ebe2;
+        --muted: #b3a99b;
+        --accent: #e0b07a;
+        --card: #211d18;
+        --line: #3a332b;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    main {
+      max-width: 44rem;
+      margin: 0 auto;
+      padding: 4rem 1.5rem 5rem;
+    }
+    header { margin-bottom: 2.5rem; }
+    h1 {
+      font-size: clamp(2rem, 6vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.75rem;
+    }
+    .tagline {
+      font-size: 1.2rem;
+      color: var(--muted);
+      margin: 0;
+    }
+    h2 {
+      font-size: 1.1rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 2.5rem 0 0.75rem;
+    }
+    p, li { color: var(--ink); }
+    ul { padding-left: 1.25rem; }
+    li { margin: 0.35rem 0; }
+    a { color: var(--accent); text-underline-offset: 0.15em; }
+    .note {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      margin: 2rem 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    footer {
+      border-top: 1px solid var(--line);
+      margin-top: 3.5rem;
+      padding-top: 1.25rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Keepsake</h1>
+      <p class="tagline">Personal flashcards for words, phrases, and grammar patterns.</p>
+    </header>
+
+    <p>Keepsake is a personal iOS flashcard app. A topic groups the words, phrases, or grammar patterns you are learning. Cards are forward-only: the term is on the front; meaning, usage, a mnemonic, and examples are on the back.</p>
+
+    <h2>What it does</h2>
+    <ul>
+      <li>Schedules reviews with FSRS-6, a spaced-repetition algorithm.</li>
+      <li>Imports cards from CSV files or a Google Sheet you choose, with duplicate rows grouped before import.</li>
+      <li>Can fill missing meaning, mnemonics, and examples through OpenAI, using your own API key.</li>
+      <li>Stores topics, cards, review history, and settings locally on your device.</li>
+      <li>Exports and restores a versioned, checksummed backup file that you control.</li>
+    </ul>
+
+    <h2>How it is distributed</h2>
+    <p>Keepsake is a personal project, not an App Store app. It is built as an unsigned iOS package and installed with SideStore inside LiveContainer using a free Apple ID. There is no account, subscription, analytics service, or backend server.</p>
+
+    <div class="note">
+      Network access is limited to the services you enable: OpenAI for AI-assisted content, and Google for OAuth and Sheets when you connect a spreadsheet. The app does not contact any other host.
+    </div>
+
+    <h2>Privacy</h2>
+    <p>Read the <a href="privacy.html">privacy policy</a> for what is stored, what is sent to OpenAI or Google, and how to remove your data.</p>
+
+    <h2>Contact</h2>
+    <p>Questions or privacy requests: <a href="mailto:lawrencekurniawan@gmail.com">lawrencekurniawan@gmail.com</a></p>
+
+    <footer>
+      <p>Keepsake is a personal study tool. AI-generated content can be wrong; it is a study aid, not an authority. Verify anything you rely on.</p>
+      <p>Last updated: November 14, 2026.</p>
+    </footer>
+  </main>
+</body>
+</html>

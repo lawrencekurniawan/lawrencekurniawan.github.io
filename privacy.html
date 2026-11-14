@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Keepsake — privacy policy</title>
+  <link rel="canonical" href="https://lawrencekurniawan.github.io/privacy.html">
+  <meta name="description" content="Privacy policy for Keepsake, a personal iOS flashcard app. Local storage, optional OpenAI and Google Sheets access, no analytics or backend.">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #faf7f2;
+      --ink: #211d18;
+      --muted: #5f574d;
+      --accent: #8a5a2b;
+      --card: #ffffff;
+      --line: #e5ddd2;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #171410;
+        --ink: #f1ebe2;
+        --muted: #b3a99b;
+        --accent: #e0b07a;
+        --card: #211d18;
+        --line: #3a332b;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    main {
+      max-width: 46rem;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 5rem;
+    }
+    h1 {
+      font-size: clamp(1.8rem, 5vw, 2.4rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.4rem;
+    }
+    .updated {
+      color: var(--muted);
+      margin: 0 0 2.5rem;
+      font-size: 0.95rem;
+    }
+    h2 {
+      font-size: 1.15rem;
+      margin: 2.4rem 0 0.6rem;
+    }
+    p, li { color: var(--ink); }
+    ul { padding-left: 1.25rem; }
+    li { margin: 0.35rem 0; }
+    a { color: var(--accent); text-underline-offset: 0.15em; }
+    .summary {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      margin: 0 0 2rem;
+    }
+    .summary p { margin: 0; }
+    footer {
+      border-top: 1px solid var(--line);
+      margin-top: 3.5rem;
+      padding-top: 1.25rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Keepsake privacy policy</h1>
+    <p class="updated">Last updated: November 14, 2026</p>
+
+    <div class="summary">
+      <p><strong>Short version:</strong> Keepsake stores your study data on your device. It has no account, analytics, ads, or backend. It contacts OpenAI only when you request AI-assisted content, and Google only when you connect a Google Sheet. Your OpenAI key and Google tokens stay in the iOS Keychain.</p>
+    </div>
+
+    <h2>1. Who this policy is for</h2>
+    <p>Keepsake is a personal iOS flashcard app for learning words, phrases, and grammar patterns. This policy explains what the app does with information. It applies to the Keepsake app and this website. This website is a static page; it does not set cookies or run analytics.</p>
+
+    <h2>2. Data stored on your device</h2>
+    <p>Keepsake stores the following locally, in the app’s container:</p>
+    <ul>
+      <li>Topics, cards, card kinds, meanings, mnemonics, and examples you add or import.</li>
+      <li>Review history, FSRS scheduling state, and daily new-card counts.</li>
+      <li>Import baselines used to detect changes in a CSV file or Google Sheet.</li>
+      <li>AI batch and request records, including token usage reported by OpenAI.</li>
+      <li>App settings, including reminder preferences and queue state.</li>
+    </ul>
+    <p>This data is not sent to a Keepsake server. There is no Keepsake server.</p>
+
+    <h2>3. AI-assisted content and OpenAI</h2>
+    <p>Keepsake can fill missing meaning, mnemonics, and examples using OpenAI. This happens only when you initiate it, or when you have enabled automatic sending and its threshold is reached. The app sends the term, its kind, and the content needed for the request to <code>api.openai.com</code>, authenticated with your own OpenAI API key.</p>
+    <p>OpenAI receives that request content and processes it under its own terms and privacy policy. Keepsake does not send your review history, backups, Google tokens, or unrelated cards. OpenAI’s handling of API data is governed by your agreement with OpenAI.</p>
+
+    <h2>4. Google Sheets and Google OAuth</h2>
+    <p>If you connect Google Sheets, Keepsake uses Google OAuth to obtain access. The app stores the resulting tokens in the iOS Keychain. It reads the spreadsheet and tab you select so it can preview and import rows.</p>
+    <p><strong>The current version is read-only.</strong> It does not modify, delete, or write to your Google Sheet. Any future write-back would be a separate, explicit feature and this policy would be updated before it is enabled.</p>
+    <p>Google receives the OAuth request and the Sheets read request under its own terms and privacy policy. Keepsake does not send your OpenAI key, review history, or backups to Google.</p>
+
+    <h2>5. Credentials</h2>
+    <p>Your OpenAI API key and Google OAuth tokens are stored in the iOS Keychain with device-only, when-unlocked protection. They are not synchronized through iCloud, not written to plain files or preferences, and not included in Keepsake backup files. After saving, the OpenAI key is never displayed again in the app.</p>
+
+    <h2>6. Backups</h2>
+    <p>Keepsake can export a <code>.keepsakebackup</code> file. A backup contains your topics, cards, review history, scheduling data, import baselines, and queue state. It does not contain your OpenAI key or Google tokens. The file is created only when you export it, and it is saved wherever you choose through the system document picker. You are responsible for that file and where you store it.</p>
+
+    <h2>7. No analytics, ads, or tracking</h2>
+    <p>Keepsake contains no analytics, telemetry, advertising, crash-reporting SDK, account system, or tracking technology. This website does not use cookies, fonts, scripts, or images from third parties.</p>
+
+    <h2>8. Retention and deletion</h2>
+    <ul>
+      <li>Cards and topics remain on your device until you delete them, archive them, or remove the app and its data.</li>
+      <li>Archiving is a soft delete: archived content is hidden from study but can remain in the database and in backups.</li>
+      <li>Deleting the app may delete its container and local database. Keep an exported backup if you want to restore later.</li>
+      <li>To remove Google access, disconnect Google in the app, which removes the stored tokens and attempts to revoke them with Google. You can also revoke access from your Google Account permissions page.</li>
+      <li>To stop OpenAI requests, remove the saved API key in the app and disable automatic sending.</li>
+    </ul>
+
+    <h2>9. Children</h2>
+    <p>Keepsake is a personal study tool and is not directed to children under 13. It does not knowingly collect personal information from children.</p>
+
+    <h2>10. Security</h2>
+    <p>Keepsake uses the iOS Keychain for credentials and stores its database in the app’s Application Support directory. No method of storage is perfectly secure. Protect your device with a passcode and keep your exported backups in a location you trust.</p>
+
+    <h2>11. Changes to this policy</h2>
+    <p>If the app’s data practices change, this page will be updated and the date at the top will change. Material changes will be described here before they take effect.</p>
+
+    <h2>12. Contact</h2>
+    <p>Questions or privacy requests: <a href="mailto:lawrencekurniawan@gmail.com">lawrencekurniawan@gmail.com</a></p>
+
+    <footer>
+      <p>Keepsake is a personal project, not a commercial service. AI-generated content can be wrong; it is a study aid, not an authority.</p>
+      <p><a href="index.html">Back to Keepsake</a></p>
+    </footer>
+  </main>
+</body>
+</html>
